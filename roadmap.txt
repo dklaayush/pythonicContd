@@ -1,0 +1,103 @@
+# Cloud Engineer Roadmap
+
+*Built for: first-year BCT student, ~18 months to job-ready, budget-conscious, self-taught path*
+
+---
+
+## 1. What a Cloud Engineer Actually Does
+
+Not just "knows AWS." Day to day it's:
+- Provisioning and managing infrastructure (servers, networks, storage) — increasingly via code, not clicking around a console
+- Automating deployments (CI/CD pipelines)
+- Monitoring systems, fixing what breaks, keeping costs sane
+- Securing infrastructure (identity, permissions, network isolation)
+- Working inside a team using Git, tickets, and documentation
+
+It sits at the intersection of **Linux + networking + programming + one or more cloud platforms**. You can't skip any of the four.
+
+---
+
+## 2. The Skill Stack (in the order you should learn them)
+
+### Stage 1 — Foundations (Months 1–4)
+| Skill | Why | What "good enough" looks like |
+|---|---|---|
+| **Linux** | Almost all cloud servers run Linux | Comfortable in the terminal: file permissions, processes, systemd, package managers, SSH, basic bash scripting |
+| **Networking basics** | Cloud = renting network infrastructure | IP addressing, subnets, DNS, HTTP/HTTPS, firewalls, load balancers — conceptually, not CCNA-deep |
+| **Git & GitHub** | Every team uses it | branch, commit, merge, pull request, resolve conflicts, `.gitignore` |
+| **Python** | The automation language of the cloud world | Scripting, file I/O, working with APIs (`requests`), CLI tools (`argparse`), and — once comfortable — `boto3` for AWS automation |
+
+You're already moving on Python and have your weekly routine — keep that going. Linux and networking are the two you should slot in next if you haven't started.
+
+### Stage 2 — Core Cloud Platform (Months 4–8)
+Pick **one** cloud provider to go deep on first. **AWS** is the right call — biggest market share, most jobs, best free resources, and it transfers well to Azure/GCP later.
+
+Learn in this order:
+1. **IAM** (Identity & Access Management) — users, roles, policies. This underlies everything else.
+2. **EC2** — virtual servers: launching, security groups, key pairs, instance types
+3. **S3** — object storage: buckets, permissions, static hosting, lifecycle rules
+4. **VPC** — networking: subnets, route tables, internet gateways, security groups vs NACLs
+5. **RDS** (relational databases as a service) — once the above feel solid
+6. **Route 53, CloudWatch, Lambda** — DNS, monitoring, serverless — lighter touch, but know what they're for
+
+**Certification target:** AWS Certified Cloud Practitioner (entry) → AWS Certified Solutions Architect – Associate (the one employers actually respect). Free tier + AWS Skill Builder cover most of the material.
+
+### Stage 3 — Automation & DevOps Tooling (Months 8–13)
+This is what separates "cloud engineer" from "person who clicks around AWS console."
+
+| Tool | What it's for |
+|---|---|
+| **Docker** | Packaging applications so they run identically anywhere — containers |
+| **Terraform** | Infrastructure as Code — define your AWS resources in files instead of clicking, version-controlled |
+| **GitHub Actions** | CI/CD — auto-test and auto-deploy code when you push to GitHub |
+| **Kubernetes (intro level)** | Orchestrating containers at scale — don't need to master it, but understand what problem it solves |
+
+### Stage 4 — Specialize & Build Proof (Months 13–18)
+- Pick a direction: **DevOps-heavy** (CI/CD, IaC, Kubernetes) or **Security-heavy** (IAM hardening, compliance, cloud security tooling) — both are valid from where you're starting
+- Build 3–4 real projects (see below) and put them on GitHub with clean READMEs
+- Get one more certification relevant to your direction (e.g., HashiCorp Terraform Associate, or AWS Security Specialty later on)
+- Start applying / freelancing / contributing to open source in parallel — don't wait until you feel "ready"
+
+---
+
+## 3. Project Ideas (Do These — They're What Gets You Hired)
+
+1. **Static website on S3 + CloudFront + Route 53**, deployed automatically via GitHub Actions
+2. **Python + boto3 script** that automates something real — e.g., spins down EC2 instances after hours to save cost, or backs up S3 buckets
+3. **Dockerized web app** deployed to EC2, with a Terraform file that provisions the whole environment from scratch
+4. **CI/CD pipeline**: push code to GitHub → GitHub Actions tests it → deploys to AWS automatically
+
+Employers in Nepal and abroad both weigh a GitHub full of real, working projects far more than a certificate with no projects behind it.
+
+---
+
+## 4. Free / Low-Cost Resources
+
+- **AWS Free Tier** — 12 months free usage of core services; enough for everything above
+- **AWS Skill Builder** — free official learning paths
+- **freeCodeCamp** (YouTube) — full Docker, Terraform, and AWS courses
+- **KodeKloud** — free tier has solid hands-on labs for Docker/Kubernetes
+- **GitHub Student Developer Pack** — free credits for AWS, DigitalOcean, and other tools (you're eligible as a student — worth activating if you haven't)
+- **Official docs** — Terraform and AWS docs are genuinely well-written; get comfortable reading them directly
+
+---
+
+## 5. Realistic Timeline
+
+```
+Months 1–4   Linux, networking basics, Git, Python fundamentals
+Months 4–8   AWS core services (IAM, EC2, S3, VPC) → Cloud Practitioner cert
+Months 8–13  Docker, Terraform, GitHub Actions, intro Kubernetes
+Months 13–18 Projects, Solutions Architect Associate cert, start applying
+```
+
+This overlaps with your BCT coursework, not replaces it — your OOP, DL, and ECM classes are still building the CS fundamentals that make all of this click faster.
+
+---
+
+## 6. A Few Honest Notes
+
+- **You don't need to memorize every AWS service.** Employers want you fluent in the 10–15 that show up constantly (listed above), not encyclopedic knowledge of all 200+.
+- **Certifications alone don't get interviews.** Projects + certs together do. A cert with zero hands-on work is a common trap.
+- **Nepal's local cloud/DevOps job market is thin but growing**, and most of what you're building here transfers directly to remote roles or roles abroad — which fits your longer-term plan of a master's abroad.
+- **Consistency beats intensity.** Your existing routine (exercise, Python, violin) already shows you can sustain a schedule — apply the same structure here rather than cramming.
