@@ -6,3 +6,6 @@ then basic networking (routing , osi layers)
 still the path is far ahead and i have to reach that #
 today i didnt code but had to maintain hub streak
 so bye
+
+i am trying to learn stashing ..
+
