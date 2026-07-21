@@ -1,18 +1,20 @@
-# #exception handling is the precess of respoinding to unwanted and unexpected efnts when a comp program runs it deals 
-# with these events to avoid the prgm or system crahsing and without this process, exceptions would disrupt normal 
-#  operation of program
+# Exception handling responds to unwanted events during execution 
+# to prevent the program from crashing abruptly.
 
-
-a = input("enter the number : ")
-print(f"Multiplication table of {a} is :")
+a = input("Enter a number: ")
 
 try:
- for i in range(1, 11):
-    print(f"{int(a)} X {i} = {int(a) * i}")
-
-except Exception as e:
-  print("sorry some error occurred")
+    num = int(a)  # Convert to int inside try block
+    print(f"\nMultiplication table of {num} is:")
+    for i in range(1, 11):
+        print(f"{num} X {i} = {num * i}")
 
 except ValueError:
-  print("number entered is not integer")
-print("end of code")
+    # Specific error catches non-numeric inputs first
+    print("Error: The value entered is not a valid integer!")
+
+except Exception as e:
+    # Catch-all for any other unexpected errors
+    print(f"An unexpected error occurred: {e}")
+
+print("\nEnd of code")
